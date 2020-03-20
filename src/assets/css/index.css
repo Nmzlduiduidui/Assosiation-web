@@ -1,0 +1,278 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+html, body {
+    /*设置内部填充为0，几个布局元素之间没有间距*/
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    min-height:100%;
+    position:absolute;
+}
+
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    /*使内容高度和body高度一样 */
+    min-height: 100%;
+    /*向上缩减70px,使footer在可视范围*/
+    margin-bottom: -70px;
+
+}
+
+/*控制主体内容和底部高度之间距离*/
+#app .el-main{
+    margin-bottom:10px;
+}
+
+
+/*侧边滚动条隐藏*/
+#app .page-component__scroll .el-scrollbar__wrap {
+    overflow-x: hidden;
+}
+
+/*a标签隐藏下划线*/
+a:link, a:visited, a:hover, a:active {
+    text-decoration: none;
+}
+
+
+/*布局容器样式=>*/
+
+/*页面头部*/
+.el-header {
+    padding: 0;
+    background-color: #545c64;
+}
+
+/*页面头部校徽*/
+.ico {
+    float: left;
+    /*border: 1px solid #00ffff;*/
+    width: 250px;
+    height: 60px;
+}
+
+/*页面尾部*/
+/*
+.footerBox .el-footer {
+    background-color: #545c64;
+    color: #ffffff;
+    text-align: center;
+    height: 30px;
+    line-height: 60px;
+}
+*/
+
+.footerBox {
+    height:40px;
+    line-height: 30px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #545c64;
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    letter-spacing: 1px;
+    z-index: 9999;
+}
+
+/*侧边栏*/
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+}
+
+/*页面主要内容*/
+.el-main {
+    color: #333;
+    text-align: center;
+    /*padding-bottom:10px;*/
+    background:#ccc;
+}
+
+/*首页-Main-其他部分*/
+.main-other{
+    width: 100%;
+    height: 100%;
+}
+
+/*body下的el-container*/
+body > .el-container {
+    margin-bottom: 10px;
+}
+.el-container:nth-child(5) .el-aside,
+.el-container:nth-child(6) .el-aside {
+    line-height: 260px;
+}
+.el-container:nth-child(7) .el-aside {
+    line-height: 320px;
+}
+
+/* 响应式布局*/
+.el-col {
+    border-radius: 4px;
+}
+.bg-purple-dark {
+    background: #99a9bf;
+}
+.bg-purple {
+    background: #d3dce6;
+}
+.bg-purple-light {
+    background: #e5e9f2;
+}
+
+
+/*首页div*/
+.indexBox {
+    width: 100%;
+    height: 100%;
+}
+
+/*首页-轮播图*/
+.swiperBox .el-carousel__item h3 {
+    color: #475669;
+    font-size: 18px;
+    opacity: 0.75;
+    line-height: 300px;
+    margin: 0;
+}
+
+/*首页轮播图图片*/
+.swiperBox .el-carousel__item:nth-child(2n) {
+    background-image: url("../../assets/backgroud.jpg");
+    background-repeat: no-repeat;
+    backgroundSize: '100% 100%';
+    width: 100%;
+    height: 100%;
+    background-color: #99a9bf;
+}
+.swiperBox .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
+}
+
+
+/*个人中心*/
+/*个人中心首页div*/
+.myBox{
+    height: 100%;
+}
+
+/*个人中心-滚动条隐藏*/
+.myBox .page-component__scroll .el-scrollbar__wrap {
+    overflow-x: hidden;
+}
+.myBox .text {
+    font-size: 14px;
+}
+.item {
+    padding: 18px 0;
+}
+
+/*
+.myHeader {
+    text-align: center;
+    line-height: 60px;
+}
+*/
+
+/*面包屑栏右侧小菜单*/
+.HomeBox .el-header {
+    background-color:rgba(255,255,255,1);
+    color: #000000;
+    line-height: 60px;
+    text-align: right;
+}
+
+/*面包屑颜色自定义*/
+.HomeBox .el-breadcrumb__item .el-breadcrumb__inner {
+    color: #303133;
+}
+.HomeBox .el-breadcrumb__item:last-child .el-breadcrumb__inner {
+    color: #909399;
+}
+
+
+
+/*首页-公告框*/
+.indexNotice{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width:100%;
+    border-radius: 50px;
+
+}
+.indexNotice .indexNotice-top{
+    margin: 20px;
+    line-height: 50px;
+    border-radius: 50px;
+}
+.indexNotice .indexNotice-top-left{
+    width: 20%;
+    text-align: center;
+    float: left;
+}
+.indexNotice .indexNotice-top-right{
+    width: 40%;
+    float: right;
+}
+.indexNotice .indexNotice-content{
+    width: 100%;
+}
+.indexNotice .indexNotice-side{
+    height: 100px;
+}
+.indexNotice h2 {
+    padding: 20px 0;
+}
+.indexNotice p{
+    font-family: Arial;
+    font-size: 14px;
+    color:#ffffff;
+}
+.indexNotice .textBox {
+    width: 100%;
+    height: 35px;
+    margin: 0 auto;
+    /*overflow: hidden;*/
+    position: relative;
+    text-align: center;
+}
+.indexNotice .text {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.indexNotice .slide-enter-active, .slide-leave-active {
+    transition: all 0.5s linear;
+}
+.indexNotice .slide-enter{
+    transform: translateY(20px) scale(1);
+    opacity: 1;
+}
+.indexNotice .slide-leave-to {
+    transform: translateY(-20px) scale(0.8);
+    opacity: 0;
+}
+
+
+/*My-个人中心*/
+.asideBox .el-aside{
+    background-color: rgb(230, 241, 246);
+}
+
+.asideBox  .el-aside {
+    color: #333;
+    height: 100%;
+    text-align: left;
+}

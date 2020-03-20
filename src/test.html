@@ -1,0 +1,66 @@
+<div id="app">
+</div>
+<script type="text/javascript" src="../../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript" src="../../node_modules/vue-router/dist/vue-router.js"></script>
+<script type="text/javascript">
+
+    const  Home={
+        template:
+            '<div><router-link :to="{ name:\'student\'} ">学生页面</router-link>\n' +
+            '<router-link :to="{ name:\'teacher\'} ">老师页面</router-link>\n' +
+            '<router-view></router-view></div>'
+    };
+
+    const  Student={
+        template:'<div>我是Student</div>'
+    };
+
+    const  Teacher={
+        template:'<div>我是Teacher</div>'
+    };
+
+    const  router=new VueRouter({
+        //配置路由对象  是routes不是routers！！！！
+        routes:[
+            //路由匹配规则
+            {
+                path:"/home",
+                name:'home',
+                component:Home,
+                //嵌套路由
+                children:[
+                    {
+                        path:"/home/student",
+                        name:'student',
+                        component:Student
+                    },
+                    {
+                        path:"/home/teacher",
+                        name:'teacher',
+                        component:Teacher
+                    }
+                ]
+            }
+        ]
+    })
+
+    const  App= {
+        template:
+            '    <div>\n' +
+            '    <router-link :to="{ name:\'home\'} ">首页</router-link>\n' +
+            '    <router-view></router-view>  </div>'
+    }
+    new Vue({
+        el:'#app',
+        data(){
+            return{}
+        },
+        template:'<App/>',
+        components:{
+            App
+        },
+        router:router
+
+    })
+
+</script>
