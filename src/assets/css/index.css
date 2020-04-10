@@ -2,15 +2,12 @@
     padding: 0;
     margin: 0;
 }
+
 html, body {
     /*设置内部填充为0，几个布局元素之间没有间距*/
     width: 100%;
-    height: 100%;
-}
-
-body{
-    min-height:100%;
-    position:absolute;
+    height: 100%;/*
+    position: absolute;*/
 }
 
 #app {
@@ -23,12 +20,12 @@ body{
     min-height: 100%;
     /*向上缩减70px,使footer在可视范围*/
     margin-bottom: -70px;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
 
-}
-
-/*控制主体内容和底部高度之间距离*/
-#app .el-main{
-    margin-bottom:10px;
 }
 
 
@@ -42,14 +39,6 @@ a:link, a:visited, a:hover, a:active {
     text-decoration: none;
 }
 
-
-/*布局容器样式=>*/
-
-/*页面头部*/
-.el-header {
-    padding: 0;
-    background-color: #545c64;
-}
 
 /*页面头部校徽*/
 .ico {
@@ -70,8 +59,48 @@ a:link, a:visited, a:hover, a:active {
 }
 */
 
+/*布局容器样式=>*/
+
+.el-container {
+    height: 100%;
+}
+
+/*页面头部*/
+.el-header {
+    padding: 0;
+    background-color: #545c64;
+    height: 30px;
+}
+
+/*侧边栏*/
+.el-aside {
+    background-color: #D3DCE6;
+    color: #333;
+    text-align: center;
+}
+
+/*控制主体内容和底部高度之间距离*/
+/*.layoutBox .el-main {*/
+    /*margin-bottom: 20px;*/
+/*}*/
+
+/*页面主要内容*/
+.el-main {
+    color: #333;
+    text-align: center;
+    /*padding-bottom:10px;*/
+    background: rgba(203,203,203,0.6);
+}
+
+/*首页-Main-其他部分*/
+.main-other {
+    width: 100%;
+    height: 100%;
+}
+
+/*模板页-底部*/
 .footerBox {
-    height:40px;
+    height: 40px;
     line-height: 30px;
     position: fixed;
     bottom: 0;
@@ -85,35 +114,17 @@ a:link, a:visited, a:hover, a:active {
     z-index: 9999;
 }
 
-/*侧边栏*/
-.el-aside {
-    background-color: #D3DCE6;
-    color: #333;
-    text-align: center;
-}
-
-/*页面主要内容*/
-.el-main {
-    color: #333;
-    text-align: center;
-    /*padding-bottom:10px;*/
-    background:#ccc;
-}
-
-/*首页-Main-其他部分*/
-.main-other{
-    width: 100%;
-    height: 100%;
-}
 
 /*body下的el-container*/
 body > .el-container {
     margin-bottom: 10px;
 }
+
 .el-container:nth-child(5) .el-aside,
 .el-container:nth-child(6) .el-aside {
     line-height: 260px;
 }
+
 .el-container:nth-child(7) .el-aside {
     line-height: 320px;
 }
@@ -122,22 +133,21 @@ body > .el-container {
 .el-col {
     border-radius: 4px;
 }
+
 .bg-purple-dark {
     background: #99a9bf;
 }
+
 .bg-purple {
     background: #d3dce6;
 }
+
 .bg-purple-light {
     background: #e5e9f2;
 }
 
 
-/*首页div*/
-.indexBox {
-    width: 100%;
-    height: 100%;
-}
+
 
 /*首页-轮播图*/
 .swiperBox .el-carousel__item h3 {
@@ -150,13 +160,14 @@ body > .el-container {
 
 /*首页轮播图图片*/
 .swiperBox .el-carousel__item:nth-child(2n) {
-    background-image: url("../../assets/backgroud.jpg");
+/*    background-image: url("../../assets/backgroud.jpg");
     background-repeat: no-repeat;
-    backgroundSize: '100% 100%';
+    backgroundSize: '100% 100%';*/
     width: 100%;
     height: 100%;
     background-color: #99a9bf;
 }
+
 .swiperBox .el-carousel__item:nth-child(2n+1) {
     background-color: #d3dce6;
 }
@@ -164,7 +175,7 @@ body > .el-container {
 
 /*个人中心*/
 /*个人中心首页div*/
-.myBox{
+.myBox {
     height: 100%;
 }
 
@@ -172,9 +183,11 @@ body > .el-container {
 .myBox .page-component__scroll .el-scrollbar__wrap {
     overflow-x: hidden;
 }
+
 .myBox .text {
     font-size: 14px;
 }
+
 .item {
     padding: 18px 0;
 }
@@ -188,58 +201,66 @@ body > .el-container {
 
 /*面包屑栏右侧小菜单*/
 .HomeBox .el-header {
-    background-color:rgba(255,255,255,1);
-    color: #000000;
+    background-color: rgba(246, 246, 246, 1);
+    color: #303133;
     line-height: 60px;
     text-align: right;
 }
 
 /*面包屑颜色自定义*/
 .HomeBox .el-breadcrumb__item .el-breadcrumb__inner {
-    color: #303133;
+    color: #606266;
 }
+
 .HomeBox .el-breadcrumb__item:last-child .el-breadcrumb__inner {
     color: #909399;
 }
 
 
-
 /*首页-公告框*/
-.indexNotice{
+.indexNotice {
     margin-top: 5px;
     margin-bottom: 5px;
-    width:100%;
+    width: 100%;
     border-radius: 50px;
 
 }
-.indexNotice .indexNotice-top{
+
+.indexNotice .indexNotice-top {
     margin: 20px;
     line-height: 50px;
     border-radius: 50px;
 }
-.indexNotice .indexNotice-top-left{
+
+.indexNotice .indexNotice-top-left {
     width: 20%;
     text-align: center;
     float: left;
 }
-.indexNotice .indexNotice-top-right{
+
+.indexNotice .indexNotice-top-right {
     width: 40%;
     float: right;
 }
-.indexNotice .indexNotice-content{
+
+.indexNotice .indexNotice-content {
     width: 100%;
 }
-.indexNotice .indexNotice-side{
+
+.indexNotice .indexNotice-side {
     height: 100px;
 }
+
 .indexNotice h2 {
     padding: 20px 0;
 }
-.indexNotice p{
+
+.indexNotice p {
     font-family: Arial;
     font-size: 14px;
-    color:#ffffff;
+    color: #ffffff;
 }
+
 .indexNotice .textBox {
     width: 100%;
     height: 35px;
@@ -248,31 +269,115 @@ body > .el-container {
     position: relative;
     text-align: center;
 }
+
 .indexNotice .text {
     width: 100%;
     position: absolute;
     bottom: 0;
 }
+
 .indexNotice .slide-enter-active, .slide-leave-active {
     transition: all 0.5s linear;
 }
-.indexNotice .slide-enter{
+
+.indexNotice .slide-enter {
     transform: translateY(20px) scale(1);
     opacity: 1;
 }
+
 .indexNotice .slide-leave-to {
     transform: translateY(-20px) scale(0.8);
     opacity: 0;
 }
 
 
-/*My-个人中心*/
-.asideBox .el-aside{
-    background-color: rgb(230, 241, 246);
+/*个人中心-首页-个人信息+修改个人信息*/
+/*个人信息列表*/
+.list-group-striped > .list-group-item {
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    padding-left: 0;
+    padding-right: 0;
+
 }
 
-.asideBox  .el-aside {
+.list-group {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.list-group-item {
+    border-bottom: 1px solid #e7eaec;
+    padding: 10px 0px;
+    font-size: 13px;
+    text-align: center;
+    height: 15px;
+}
+
+.pull-right {
+    margin-right: 5%;
+    float: right !important;
+}
+
+.pull-left {
+    margin-left: 5%;
+    float: left !important;
+}
+
+/*头像位置*/
+.informationBox .block {
+    margin: 20px
+}
+
+/*卡片样式*/
+.informationBox .clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 20px;
+}
+
+/*卡片头*/
+.informationBox .clearfix {
+    height: 15px;
+}
+
+/*卡片背景*/
+.informationBox .box-card {
+    width: 95%;
+    background-color: rgba(215, 215, 215, 0.98);
+}
+
+/*个人信息修改*/
+.informationBox .myInformation {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.informationBox .text {
+    font-size: 14px;
+}
+
+.informationBox .item {
+    margin-bottom: 15px;
+}
+
+/*个人中心侧边栏*/
+/*侧边栏背景*/
+.asideBox .el-aside {
+    background-color: rgb(230, 241, 246);
     color: #333;
     height: 100%;
-    text-align: left;
+    line-height: 60px;
 }
+
+
+
+
+
+
+
+

@@ -63,12 +63,12 @@
 <script>
 
     import Swiper from "./Swiper";
-    import Notice from "./Notice/Notice";
+    import Notice from "../../views/notice/Index";
     import '@/assets/css/main.css'
-    import IndexNotice from "./Notice/indexNotice";
+    import IndexNotice from "../../views/notice/IndexNotice";
 
     export default {
-        name: "Mian",
+        name: "Main",
         data: function () {
             return {
                 tabPosition: 'left',
